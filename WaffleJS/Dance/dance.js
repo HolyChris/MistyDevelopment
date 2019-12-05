@@ -1,5 +1,4 @@
-// adb push './ColdOutside_Good.mp3' '/sdcard/audio/Audio' 
-// adb push './ColdOutside_Good.mp3' '/sdcard/audio/Audio' 
+// adb push './Audio.mp3' '/sdcard/audio/Audio' 
 
 misty.MoveHeadDegrees(0, 0, 0, 100);
 misty.Pause(3000);
@@ -38,14 +37,12 @@ function _moveFR()
     misty.DisplayImage("e_Joy.jpg");
     for (let index = 0; index < 6; index++) 
     {
-        // misty.DriveTrack(30, 30);
         misty.DriveTime(30, 0, 600);
         misty.MoveArmDegrees("left", -80, 50); misty.Pause(50);
         misty.MoveArmDegrees("right", -80, 50);
 
         misty.Pause(500); misty.Stop(); misty.Pause(200);
 
-        // misty.DriveTrack(-30, -30);
         misty.DriveTime(-30, 0, 600);
         misty.MoveArmDegrees("left", 80, 50); misty.Pause(50);
         misty.MoveArmDegrees("right", 80, 50);
@@ -78,11 +75,10 @@ function _moveFRandI()
 
     for (let index = 0; index < 10; index++) 
     {
-        // misty.DriveTrack(30, 30);
         misty.DriveTime(30, 0, 700);
         misty.MoveHeadDegrees(45, 0, 0, 100);
         misty.Pause(500); misty.Stop(); misty.Pause(200);
-        // misty.DriveTrack(-30, -30);
+        
         misty.DriveTime(-30, 0, 700);
         misty.MoveHeadDegrees(-20, 0, 0, 100);
         misty.Pause(500); misty.Stop(); misty.Pause(200);
@@ -132,13 +128,6 @@ function _handsSpin()
     return 0;
 }
 
-function CheckStatus() {
-    if (misty.Get("Dance") == "False") {
-        misty.Stop();
-        return 1;
-    }
-}
-
 function _sequence()
 {
     
@@ -155,7 +144,6 @@ function _sequence()
     }
     
     misty.Pause(2000);
-    // _ = _headI();
 
     if (misty.Get("Dance") == "True") {
         _ = _moveFRandI();
@@ -166,8 +154,10 @@ function _sequence()
     }
 
     misty.PlayAudio("032-Bewbewbeeew.wav", 100);
+    
     misty.Stop();
     misty.Pause(500);
+
     misty.ChangeLED(0,255,0);
     misty.DisplayImage("e_DefaultContent.jpg");
     return 0;
@@ -176,24 +166,6 @@ function _sequence()
 function _dance()
 {
     _ = _sequence();
-    // misty.DriveTime(10, 10, 1500);
-    // misty.Pause(1500);
-    // misty.Stop();
-
-    // _ = _sequence();
-    // misty.DriveTime(-10, -10, 1500);
-    // misty.Pause(1500);
-    // misty.Stop();
-
-    // _ = _sequence();
-    // misty.DriveTime(10, -10, 1500);
-    // misty.Pause(1500);
-    // misty.Stop();
-
-    // _ = _sequence();
-    // misty.DriveTime(-10, 10, 1500);
-    // misty.Pause(1500);
-    // misty.Stop();
     
     if (misty.Get("Dance") == "True") {
         misty.RegisterTimerEvent("dance", 100, false);
