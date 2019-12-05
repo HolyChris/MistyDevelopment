@@ -1,0 +1,19 @@
+{
+  "Name": "dance",
+  "UniqueId": "670b796c-e4a9-4b81-b654-52f7bc0a1213",
+  "Description": "My skill is amazing!",
+  "StartupRules": [
+    "Manual",
+    "Robot","Startup","Manufacturing"
+  ],
+  "Language": "javascript",
+  "BroadcastMode": "debug",
+  "TimeoutInSeconds": 36000,
+  "CleanupOnCancel": false,
+  "WriteToLog": false,
+  "Parameters": {
+    "int": 10,
+    "double": 20.5,
+    "string": "twenty"
+  }
+}
