@@ -162,6 +162,8 @@ function _sequence()
 function _dance()
 {
     _ = _sequence();
+
+    // Uncomment below if you want a different sequence of events. 
     // misty.DriveTime(10, 10, 1500);
     // misty.Pause(1500);
     // misty.Stop();
@@ -208,12 +210,6 @@ function _Bumped(data)
     {
         if (sensor == "Bump_FrontRight")
         {
-            // misty.Set("Sing", "True", false);
-            // misty.PlayAudio("s_Joy2.wav");
-            // misty.Pause(2000);
-            // misty.ChangeLED(0,0,0);
-            // misty.RegisterTimerEvent("dance", 100, false);
-            // misty.RegisterTimerEvent("LEDdance", 500, false);
             misty.MoveHeadDegrees(0, 0, 0, 100);
             misty.PlayAudio("mostlyCloudy_Bob.mp3");
             misty.Pause(2000);
@@ -222,12 +218,6 @@ function _Bumped(data)
         }
         else if(sensor == "Bump_FrontLeft")
         {
-            // misty.Set("Sing", "True", false);
-            // misty.PlayAudio("s_Joy2.wav");
-            // misty.Pause(2000);
-            // misty.ChangeLED(0,0,0);
-            // misty.RegisterTimerEvent("dance", 100, false);
-            // misty.RegisterTimerEvent("LEDdance", 500, false);
             misty.MoveHeadDegrees(0, 0, 0, 100);
             misty.PlayAudio("mostlyCloudy_Bob.mp3");
             misty.Pause(2000);
@@ -236,10 +226,6 @@ function _Bumped(data)
         } 
         else if (sensor == "Bump_RearLeft")
         {
-            // misty.Set("Sing", "False", false);
-            // misty.PlayAudio("s_PhraseHello.wav");   
-            // misty.Pause(4000);
-            // misty.ChangeLED(255,0,0);
             misty.MoveHeadDegrees(0, 0, 0, 100);
             misty.PlayAudio("mostlyCloudy_Bob.mp3");
             misty.Pause(2000);
